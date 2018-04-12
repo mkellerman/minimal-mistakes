@@ -10,14 +10,14 @@ tags:
 - PSSession
 - Remoting
 - Invoke-Command
-published: true
+published: false
 comments: true
 header:
     teaserlogo: 
 ---
 {% include base_path %} 
 
-As a first technical blog post, i've decide to document some of the work I did to move away from <a href="https://docs.microsoft.com/en-us/sysinternals/downloads/psexec">PsExec</a> in our environment. 
+As a first technical blog post, I've decide to document some of the work I did to move away from <a href="https://docs.microsoft.com/en-us/sysinternals/downloads/psexec">PsExec</a> in our environment. 
 
 #### But why... What's wrong with PsExec?
 
@@ -73,21 +73,21 @@ A colleague of mine found a <a href="https://github.com/JetBrains/runAs">Jetbrai
 But having binaries being copied over is definitely not elegant.
 
 #### Invoke-RunAs
-I then found <b>Invoke-RunAs</b> by Ruben Boonen (@FuzzySec) that uses Add-Type to load the DLL and invoke 'Advapi32::CreateProcessWithLogonW' the same way RunAs.exe is doing. View my wrapper here: <a href="https://github.com/mkellerman/PSRunAs/blob/master/Invoke-RunAs/Invoke-ExpressionAs.ps1">Invoke-ExpressionAs</a>
+I then found <b>Invoke-RunAs</b> by Ruben Boonen (@FuzzySec) that uses Add-Type to load the DLL and invoke 'Advapi32::CreateProcessWithLogonW' the same way `RunAs.exe` is doing. View my wrapper here: <a href="https://github.com/mkellerman/PSRunAs/blob/master/Invoke-RunAs">Invoke-RunAs</a>
 
 #### Start-ProcessAsUser
-Also, verify similarly, <b>Start-ProcessAsUser</b> by Matthew Graeber (@mattifestation) with modifications by Lee Christensen (@tifkin_) uses Reflection to load the DLL and invoke 'Advapi32::CreateProcessWithLogonW' the same way RunAs.exe is doing. View my wrapper here: <a href="https://github.com/mkellerman/PSRunAs/blob/master/Start-ProcessAsUser/Invoke-ExpressionAs.ps1">Invoke-ExpressionAs</a>
+Also, verify similarly, <b>Start-ProcessAsUser</b> by Matthew Graeber (@mattifestation) with modifications by Lee Christensen (@tifkin_) uses Reflection to load the DLL and invoke 'Advapi32::CreateProcessWithLogonW' the same way RunAs.exe is doing. View my wrapper here: <a href="https://github.com/mkellerman/PSRunAs/blob/master/Start-ProcessAsUser">Start-ProcessAsUser</a>
 
 All these implementations required some code wizardry to return a PowerShell Objects.
 
 #### Invoke-ScheduledTask
 Alternatively, one solution that is very often talked about is to create a Scheduled Task on the remote machine, and let 'SYSTEM' (or any supplied credential) execute your process. It's simple, and after some digging around, i found out it creates a ScheduledJob, and you can Receive-Job the result as a Powershell Object. 
 
-So i created a `Invoke-ScheduleTask` cmdlet to help simplify this and created a wrapper to copy the implementations above. View my wrapper here: <a href="https://github.com/mkellerman/PSRunAs/blob/master/Invoke-ScheduledJob/Invoke-ExpressionAs.ps1">Invoke-ExpressionAs</a>
+So i created a `Invoke-ScheduleTask` cmdlet to help simplify this and created a wrapper to copy the implementations above. View my wrapper here: <a href="https://github.com/mkellerman/PSRunAs/blob/master/Invoke-ScheduledJob/">Invoke-ScheduledJob</a>
 
 ### Simpler is better
 
-After playing around with all these solutions for a while, I've decided to implement the Invoke-ScheduleJob into my final solution, as it returns native objects, and doesn't break any of the output streams.
+After playing around with all these solutions for a while, I've decided to implement the `Invoke-ScheduleJob` into my final solution, as it returns native PowerShell Objects, and doesn't break any of the output streams.
 
 Go check it out here: <a href="https://github.com/mkellerman/Invoke-CommandAs">Invoke-CommandAs</a>.
 
@@ -96,8 +96,8 @@ It's also in the PowerShell Gallery!
 ````
 # Install Module
 Install-Module -Name Invoke-CommandAs
-Import-Module -Name Invoke-CommandAs
-
+````
+````
 # Execute Locally.
 Invoke-CommandAs -ScriptBlock { Get-Process }
 
