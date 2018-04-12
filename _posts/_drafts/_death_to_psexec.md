@@ -48,6 +48,8 @@ Should be simple enough...
 
 Test: Execute powershell.exe with a different set of credentials, and return Get-Process.
 
+<!--
+
 ````
 # Using Start-Process
 
@@ -63,6 +65,35 @@ Invoke-WmiMethod -Class Win32_Process -Name Create -ArgumentList 'powershell.exe
 
 [System.Diagnostics.Process]::Start( "C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe", "-Command Get-Process", $Credential.UserName.Split('\')[1] , $Credential.Password , $Credential.UserName.Split('\')[0] )
 ````
+-->
 
+I wanted to try out an replicated the RunAs.exe command, to start my powershell.exe process under another set of credentials. Wasn't able to launch it remotely and provide the credentials to the console.
 
-I started by trying to execute the RunAs.exe command on the remote machine. I wasn't able to provide the credential to RunAs.exe, and searched for alternatives.
+### Invoke-CmdAs
+A colleague of mine found a <a href="https://github.com/JetBrains/runAs">Jetbrains/runAs</a> project that replicates the RunAs.exe utility, but allows the credentials to be passed in the command line. View my wrapper here: <a href="https://github.com/mkellerman/PSRunAs/blob/master/Invoke-CmdAs/Invoke-ExpressionAs.ps1">Invoke-ExpressionAs</a>
+
+But having binaries being copied over is definitely not elegant.
+
+### Invoke-RunAs
+I then found <b>Invoke-RunAs</b> by Ruben Boonen (@FuzzySec) that uses Add-Type to load the DLL and invoke 'Advapi32::CreateProcessWithLogonW' the same way RunAs.exe is doing. View my wrapper here: <a href="https://github.com/mkellerman/PSRunAs/blob/master/Invoke-RunAs/Invoke-ExpressionAs.ps1">Invoke-ExpressionAs</a>
+
+### Start-ProcessAsUser
+Also, verify similarly, <b>Start-ProcessAsUser</b> by Matthew Graeber (@mattifestation) with modifications by Lee Christensen (@tifkin_) uses Reflection to load the DLL and invoke 'Advapi32::CreateProcessWithLogonW' the same way RunAs.exe is doing. View my wrapper here: <a href="https://github.com/mkellerman/PSRunAs/blob/master/Start-ProcessAsUser/Invoke-ExpressionAs.ps1">Invoke-ExpressionAs</a>
+
+All these implementations required some code wizardry to return a PowerShell Objects.
+
+### Invoke-ScheduledTask
+Alternatively, one solution that is very often talked about is to create a Scheduled Task on the remote machine, and let 'SYSTEM' (or any supplied credential) execute your process. It's simple, and after some digging around, i found out it creates a ScheduledJob, and you can Receive-Job the result as a Powershell Object. 
+
+So i created a Invoke-ScheduleTask cmdlet to help simplify this and created a wrapper to copy the implementations above. View my wrapper here: <a href="https://github.com/mkellerman/PSRunAs/blob/master/Invoke-ScheduledJob/Invoke-ExpressionAs.ps1">Invoke-ExpressionAs</a>
+
+### Simpler is better
+
+After playing around with all these solutions for a while, I've decided to implement the Invoke-ScheduleJob into my final solution, as it returns native objects, and doesn't break any of the output streams.
+
+Go check it out here: <a href="https://github.com/mkellerman/Invoke-CommandAs">Invoke-CommandAs</a>.
+It's also in the PowerShell Gallery!
+
+I'm sure there is tones of other ways to do this, or some experiences that made one solution better than another, and would love to hear about them!
+
+Leave a comment and share!
