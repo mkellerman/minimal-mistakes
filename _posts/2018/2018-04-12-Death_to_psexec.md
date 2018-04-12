@@ -25,7 +25,7 @@ Currently we use PsExec to remotely execute our NUnit tests against our test env
 
 #### Why not use PowerShell Remote Sessions? 
 
-Have you heard of the Double-Hop issue? Ashley McGlone has a great <a href="https://blogs.technet.microsoft.com/ashleymcglone/2016/08/30/powershell-remoting-kerberos-double-hop-solved-securely/">article</a> explaining the issue and offering tones of solutions. 
+Have you heard of the Double-Hop issue? Ashley McGlone (@GoateePFE) has a great <a href="https://blogs.technet.microsoft.com/ashleymcglone/2016/08/30/powershell-remoting-kerberos-double-hop-solved-securely/">article</a> explaining the issue and offering tones of solutions. 
 
 #### So why not implement one of those solutions? 
 
