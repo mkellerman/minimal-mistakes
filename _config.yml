@@ -16,7 +16,7 @@ minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt"
 
 # Site Settings
 locale                   : "en-US"
-title                    : "Site Title"
+title                    : "PS /mkellerman>"
 title_separator          : "-"
 name                     : "my powershell blog"
 description              : "little piece of the web to dump my own experiences using powershell"
@@ -98,8 +98,8 @@ analytics:
 # Site Author
 author:
   name             : "Marc R Kellerman"
-  avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "DevOps, CI/CD Automation, Windows Automation, PowerShell, MacGyver & Ninja."
+  avatar           : "/assets/img/me.png" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  bio              : "DevOps, PS MacGyver."
   location         : "Victoria, BC"
   email            :
   uri              :
@@ -110,13 +110,13 @@ author:
   flickr           :
   facebook         :
   foursquare       :
-  github           : "https://github.com/mkellerman"
+  github           : "mkellerman"
   gitlab           :
   google_plus      :
   keybase          :
   instagram        :
   lastfm           :
-  linkedin         : # "john-doe-12345678" (the last part of your profile url, e.g. https://www.linkedin.com/in/john-doe-12345678)
+  linkedin         : "marc-r-kellerman-41627b22" # "john-doe-12345678" (the last part of your profile url, e.g. https://www.linkedin.com/in/john-doe-12345678)
   pinterest        :
   soundcloud       :
   stackoverflow    : # "123456/username" (the last part of your profile url, e.g. https://stackoverflow.com/users/123456/username)
