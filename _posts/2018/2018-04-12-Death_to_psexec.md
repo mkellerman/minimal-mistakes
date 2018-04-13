@@ -121,5 +121,7 @@ I'm sure there is tons of other ways to do this, or some scenarios that makes on
 
 Msg me on Twitter!
 
+----
 Update:
+
 2018-04-12: Reddit user <a href="https://www.reddit.com/r/PowerShell/comments/8bvhcr/blog_death_to_psexec_how_to_invoke_powershell_as/dxa42tr/">kusuriya</a> pointed to <a href="https://github.com/clymb3r/PowerShell/blob/master/Invoke-TokenManipulation/Invoke-TokenManipulation.ps1">Invoke-TokenManipulation</a> to impersonate another users Logon Token.
