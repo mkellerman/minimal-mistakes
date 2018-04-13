@@ -21,11 +21,11 @@ As a first technical blog post, I've decide to document some of the work I did t
 
 #### But why... What's wrong with PsExec?
 
-Currently we use PsExec to remotely execute our NUnit tests against our test environment. It works most of the time, but when there is any network interruption or connectivity issue, the session drops, but the actual process continues on the remote machine. You then have to implement tones of error handling to re-connect and try to continue where you left off, or pick up the test results... it's simply a nightmare.
+Currently we use PsExec to remotely execute our NUnit tests against our test environment. It works most of the time, but when there is any network interruption or connectivity issue, the session drops, but the actual process continues on the remote machine. You then have to implement tons of error handling to re-connect and try to continue where you left off, or pick up the test results... it's simply a nightmare.
 
 #### Why not use PowerShell Remote Sessions? 
 
-Have you heard of the Double-Hop issue? Ashley McGlone (@GoateePFE) has a great <a href="https://blogs.technet.microsoft.com/ashleymcglone/2016/08/30/powershell-remoting-kerberos-double-hop-solved-securely/">article</a> explaining the issue and offering tones of solutions. 
+Have you heard of the Double-Hop issue? Ashley McGlone (@GoateePFE) has a great <a href="https://blogs.technet.microsoft.com/ashleymcglone/2016/08/30/powershell-remoting-kerberos-double-hop-solved-securely/">article</a> explaining the issue and offering tons of solutions. 
 
 #### So why not implement one of those solutions? 
 
@@ -117,6 +117,6 @@ Invoke-CommandAs -ComputerName 'VM01', 'VM02' -Credential $Credential -ScriptBlo
 Invoke-CommandAs -Session $PSSession -ScriptBlock { Get-Process } -AsJob
 ````
 
-I'm sure there is tones of other ways to do this, or some scenarios that makes one solution better than others, and would love to hear about them!
+I'm sure there is tons of other ways to do this, or some scenarios that makes one solution better than others, and would love to hear about them!
 
 Leave a comment and share!
