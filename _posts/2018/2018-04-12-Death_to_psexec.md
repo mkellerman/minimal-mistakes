@@ -119,4 +119,4 @@ Invoke-CommandAs -Session $PSSession -ScriptBlock { Get-Process } -AsJob
 
 I'm sure there is tons of other ways to do this, or some scenarios that makes one solution better than others, and would love to hear about them!
 
-Leave a comment and share!
+Msg me on Twitter!
