@@ -81,7 +81,7 @@ $Computers | Invoke-Job -ScriptBlock $ScriptBlock -Throttle 4 -Timeout 30 -Impor
 ```
 This example shows how to execute a function against many computers, but with a throttle and a timeout. And output the results directly.
 
-And here you go. Simple and easy to read code. If I had to put the code here to handle the Throttle, the Timeout and the PassThru, it would have been +100 lines of code and hard for someone else to read and maintain. 
+And here you go. Simple and easy to read code. If I had to put the code here to handle the Throttle, the Timeout, ImportFunctions and the PassThru, it would have been +250 lines of code and hard for someone else to read and maintain. 
 
 Let me know what you guys think!
 Msg me on Twitter!
