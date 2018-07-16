@@ -99,7 +99,7 @@ analytics:
 author:
   name             : "Marc R Kellerman"
   avatar           : "/assets/img/me.png" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "DevOps, PS MacGyver."
+  bio              : "DevOps, CI/CD Automation, Windows Automation, PowerShell MacGyver."
   location         : "Victoria, BC"
   email            :
   uri              :
