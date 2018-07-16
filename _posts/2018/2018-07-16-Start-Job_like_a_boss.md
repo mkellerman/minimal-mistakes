@@ -28,7 +28,7 @@ I wanted to replicate the Start-Job cmdlet, but add a few extra parameters:
 
 ### Let's make a simple example:
 ```
-Import-Module Invoke-Job
+Import-Module .\Invoke-Job.ps1
 
 function Invoke-HelloWorld { 
     Write-Warning 'Hello World'
@@ -40,7 +40,7 @@ This example shows how to invoke a custom function, inside of the background job
 
 ### Now that we get the basics, let's bump it up a notch:
 ```
-Import-Module Invoke-Job
+Import-Module .\Invoke-Job.ps1
 
 # Load a script in this user session
 # https://gallery.technet.microsoft.com/scriptcenter/Get-PendingReboot-Query-bdb79542
@@ -85,3 +85,5 @@ And here you go. Simple and easy to read code. If I had to put the code here to 
 
 Let me know what you guys think!
 Msg me on Twitter!
+
+Link: <a href="https://github.com/mkellerman/Invoke-Job">https://github.com/mkellerman/Invoke-Job</a>
