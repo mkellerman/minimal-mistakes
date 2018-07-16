@@ -86,6 +86,7 @@ This example shows how to execute a function against many computers, but with a 
 And here you go. Simple and easy to read code. If I had to put the code here to handle the Throttle, the Timeout, ImportFunctions and the PassThru, it would have been +250 lines of code and hard for someone else to read and maintain. 
 
 Let me know what you guys think!
-Msg me on Twitter!
+
+Msg me on Twitter, love getting your feedback!
 
 Link: <a href="https://github.com/mkellerman/Invoke-Job">https://github.com/mkellerman/Invoke-Job</a>
