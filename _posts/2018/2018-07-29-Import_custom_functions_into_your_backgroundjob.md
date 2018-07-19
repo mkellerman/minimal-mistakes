@@ -1,6 +1,6 @@
 ---
 layout: single
-title: Import custom functions into your PSSession/BackgroundJob
+title: Import functions into your remote session
 excerpt: "use this one-liner to do all the heavy lifting"
 permalink:
 tags: 
