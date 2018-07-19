@@ -1,6 +1,6 @@
 ---
 layout: single
-title: Import functions into your remote session
+title: Import functions in remote sessions
 excerpt: "use this one-liner to do all the heavy lifting"
 permalink:
 tags: 
