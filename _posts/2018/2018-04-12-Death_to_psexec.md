@@ -80,7 +80,7 @@ Also, verify similarly, <b>Start-ProcessAsUser</b> by Matthew Graeber (@mattifes
 
 All these implementations required some code wizardry to return a PowerShell Objects.
 
-#### Invoke-ScheduledJob
+#### Invoke-ScheduledTask
 Alternatively, one solution that is very often talked about is to create a Scheduled Task on the remote machine, and let 'SYSTEM' (or any supplied credential) execute your process. It's simple, and after some digging around, i found out it creates a ScheduledJob, and you can Receive-Job the result as a Powershell Object. 
 
 So i created a `Invoke-ScheduleTask` cmdlet to help simplify this and created a wrapper to copy the implementations above. View my wrapper here: <a href="https://github.com/mkellerman/PSRunAs/blob/master/Invoke-ScheduledJob/">Invoke-ScheduledJob</a>
