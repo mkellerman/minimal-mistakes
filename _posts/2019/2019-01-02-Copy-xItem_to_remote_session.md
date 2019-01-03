@@ -59,8 +59,10 @@ Invoke-Command -Session $Session -ScriptBlock { Get-PendingReboot }
 
 ### Conclusion
 
-So there you have it.. little duck tape, a couple paperclips, and presto, my own little script to copy over files, functions and modules to a remote PowerShell Session. I'll dump the source of Copy-xItem, Copy-xFunction and Copy-xModule, on GitHub.
+So there you have it.. little duck tape, a couple paperclips, and presto, my own little script to copy over files, functions and modules to a remote PowerShell Session. 
+
+You really need to see the source to appreciate it. I'll dump the source of Copy-xItem, Copy-xFunction and Copy-xModule, on GitHub. 
 
 https://github.com/mkellerman/Copy-xItem
 
-Let me know what you think! And dont be shy to make PRs!
+Go check it out and let me know what you think! And dont be shy to make PRs!
