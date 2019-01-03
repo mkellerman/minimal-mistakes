@@ -15,7 +15,7 @@ header:
 ---
 {% include base_path %} 
 
-### Copying a file to a Powershell Remote Session
+### Copying a file/function/module to a Powershell Remote Session
 
 Most of the time I write my script locally. I then add a second layer to run it remotely, and make sure everything works well. Building my scripts like a cake.
 
