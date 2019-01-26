@@ -69,7 +69,7 @@ New-WordCloud -InputObject $TwitterStatuses.text -Path ".\TwitterStatuses.png" -
 1. Generate WordCloud
 1. Profit
 
-{% include figure image_path="/assets/posts/2020-01-25-Introducing_PSTwitterAPI_WordCloud.png" alt="WorldCloud" caption="WorldCloud" %}
+{% include figure image_path="/assets/posts/2020-01-25-Introducing_PSTwitterAPI_WordCloud.png" alt="WorldCloud" caption="PSWorldCloud for @mkellerman using PSTwitterAPI" %}
 
 ## Open Source: Come and help!
 I've built the foundation, but there are many things left to do:
