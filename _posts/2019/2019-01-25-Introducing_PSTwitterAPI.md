@@ -1,6 +1,6 @@
 ---
 layout: single
-title: Introducing PSTwitterAPI: a PowerShell module for the Twitter API
+title: Introducing PSTwitterAPI - a PowerShell module for the Twitter API
 excerpt: "the most complete solution available out there!"
 permalink:
 tags: 
