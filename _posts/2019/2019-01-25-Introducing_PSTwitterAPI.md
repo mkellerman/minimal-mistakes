@@ -26,7 +26,7 @@ Seriously, for whatever the reasons you need to interact with the Twitter's API,
 ## Twitter API Helper functions
 I originally created the module [InvokeTwitterAPIs](https://github.com/mkellerman/invoketwitterapis) that is sitting in the [PowerShell Gallery](https://www.powershellgallery.com/packages/InvokeTwitterAPIs/2.5), but a lot has changed since then. I wanted to refactor the whole project and make it easier/faster overall. It wasn't complete, and many endpoints where missing.
 
-Instead of writing each endpoints by hand, I created a Script to scrape the Twitter API documentation, get the ResourceUrl, Description and Parameters, to generate all the functions dynamically. You can go check that part out here: [GitHub: APIHelper](https://github.com/mkellerman/PSTwitterAPI/tree/master/APIHelper)
+Instead of writing each endpoint by hand, I created a Script to scrape the Twitter API documentation, get the resource URL, description and parameters. It then uses this to generate all the helper functions dynamically. You can go check it out here: [GitHub: APIHelper](https://github.com/mkellerman/PSTwitterAPI/tree/master/APIHelper)
 
 It's not pretty, but it does the job!
 
@@ -66,10 +66,10 @@ New-WordCloud -InputObject $TwitterStatuses.text -Path ".\TwitterStatuses.png" -
 1. Provide authentication token to the module
 1. Get last 200 tweets from your user
 1. Get stop words to be excluded from the world cloud
-1. Generate WordCloud
+1. Generate word cloud
 1. Profit
 
-{% include figure image_path="/assets/posts/2020-01-25-Introducing_PSTwitterAPI_WordCloud.png" alt="PSWorldCloud for @mkellerman using PSTwitterAPI" caption="PSWorldCloud for @mkellerman using PSTwitterAPI" %}
+{% include figure image_path="/assets/posts/2020-01-25-Introducing_PSTwitterAPI_WordCloud.png" alt="PSWordCloud for @mkellerman using PSTwitterAPI" caption="PSWordCloud for @mkellerman using PSTwitterAPI" %}
 
 ## Open Source: Come and help!
 I've built the foundation, but there are many things left to do:
