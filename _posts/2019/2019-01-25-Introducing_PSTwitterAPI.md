@@ -74,7 +74,7 @@ New-WordCloud -InputObject $TwitterStatuses.text -Path ".\TwitterStatuses.png" -
 ## Open Source: Come and help!
 I've built the foundation, but there are many things left to do:
 - Test each helper function (Manual/Pester).
-- If you see a missing API Helper, create an Issue.
+- If you see a missing API endpoint, create an Issue.
 - Any improvements you can suggest/make **please** make a PR!
 
 You are using Twitter via Powershell? 
