@@ -42,7 +42,7 @@ Set-TwitterOAuthSettings -ApiKey $env:ApiKey -ApiSecret $env:ApiSecret -AccessTo
 Get-TwitterUsers_Lookup -screen_name 'mkellerman'
 ```
 1. Provide authentication token to the module
-1. Use one of the +120 helper functions to get/send requires to Twitter
+1. Use one of the +120 helper functions to get/send requests to Twitter
 1. Profit
 
 ## Example 2: Create WordCloud from your recent tweets
